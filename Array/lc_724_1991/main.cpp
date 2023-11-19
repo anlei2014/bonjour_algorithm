@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//https://leetcode.cn/problems/find-pivot-index/solutions/1645928/by-jyd-9265/
+
 class Solution {
 public:
     int pivotIndex(vector<int>& nums) {
