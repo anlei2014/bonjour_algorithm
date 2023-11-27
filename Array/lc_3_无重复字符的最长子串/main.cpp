@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
+
 using namespace std;
 
 /**
@@ -27,27 +29,7 @@ using namespace std;
     0 <= s.length <= 5 * 104
     s 由英文字母、数字、符号和空格组成
  * */
-
-class Solution2 {
-public:
-    int lengthOfLongestSubstring(string s) {
-        int result = 0, length = s.length();
-        int start = 0, end = 0;
-        while(end <= length){
-            // 发现有重复字符时，可以直接把左指针移动到重复字符的下一个位置
-            for(int i = start; i < end; i++){
-                if(s[i] == s[end]){
-                    start = i+1;
-                    break;
-                }
-            }
-            result = max(result, end-start+1);
-            end++;
-        }
-        return result;
-    }
-};
-
+ /*双指针*/
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
@@ -71,6 +53,41 @@ public:
     }
 };
 
+/* 滑动窗口*/
+class Solution2 {
+public:
+    int lengthOfLongestSubstring(string s) {
+        // 如果字符串为空，则返回0
+        if (s.length() == 0)
+        {
+            return 0;
+        }
+
+        int start = 0;
+        int end = 0;
+        int len = 0;
+        int res;
+        // 创建哈希表，用于记录字符出现的位置
+        unordered_map<char,int> map;
+
+        while (end < s.size())
+        {
+            //find函数会返回迭代器，如果当前字符不重复，那么返回end()迭代器
+            if (map.find(s[end]) != map.end())
+            {
+                start = map[s[end]] + 1;
+                len = end - start;
+            }
+            map[s[end]] = end;
+
+            end++;
+            len++;
+            res = max(res,len);
+        }
+        return res;
+    }
+};
+
 void test()
 {
     Solution s;
@@ -81,10 +98,20 @@ void test()
     cout << res <<endl;
 
 }
+void test2()
+{
+    Solution s2;
+    string  s1 = "abcabcbb";
+//    string  s1 = "abcdeafghi";
+    int res =0;
+    res = s2.lengthOfLongestSubstring(s1);
+    cout << res <<endl;
 
+}
 int main() {
 
     test();
+    test2();
     std::cout << "Hello, World!" << std::endl;
     return 0;
 }
