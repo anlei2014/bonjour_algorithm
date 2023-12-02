@@ -45,7 +45,7 @@ void test()
 
     Solution s;
     s.reverseList(n0);
-    
+
 }
 
 int main() {
