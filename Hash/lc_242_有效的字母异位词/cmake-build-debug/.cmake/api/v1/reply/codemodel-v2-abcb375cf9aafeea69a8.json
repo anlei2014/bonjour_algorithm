@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "lc_242_",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "lc_242_::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lc_242_-Debug-99cfb689c022caad8c03.json",
+					"name" : "lc_242_",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "F:/code/bonjour_algorithm/Hash/lc_242_\u6709\u6548\u7684\u5b57\u6bcd\u5f02\u4f4d\u8bcd/cmake-build-debug",
+		"source" : "F:/code/bonjour_algorithm/Hash/lc_242_\u6709\u6548\u7684\u5b57\u6bcd\u5f02\u4f4d\u8bcd"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}
