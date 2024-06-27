@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <numeric>
 
 using namespace std;
 
@@ -24,9 +25,10 @@ public:
     bool canPartition(vector<int> &nums) {
         // 计算总和
         int sum = 0;
-        for (int num: nums) {
+        sum = accumulate(nums.begin(), nums.end(), 0);
+/*        for (int num: nums) {
             sum += num;
-        }
+        }*/
         //奇数没办法拆分，直接返回
         if (sum % 2 == 1) return false;
         // 一半
@@ -56,7 +58,7 @@ public:
 int main() {
     std::cout << "Hello, World!" << std::endl;
 
-    vector<int> v = {1,5,11,5};
+    vector<int> v = {1, 5, 11, 5};
     Solution s;
     cout << s.canPartition(v);
     return 0;
